@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PredicFutbol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+    header {
+      background: rgba(0, 51, 0, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+    }
+    header h1::before {
+      content: "\26BD";
+      margin-right: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      margin: 1rem;
+      border-radius: 10px;
+    }
+    .ads {
+      background: #444;
+      text-align: center;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .predictions, .chatgpt, .results {
+      margin-top: 1rem;
+    }
+    h2 {
+      border-bottom: 2px solid #fff;
+      padding-bottom: .5rem;
+    }
+    .match {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PREDICFUTBOL</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Leagues</a>
+      <a href="#">Predictions</a>
+      <a href="#">Blog</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="ads">ADVERTISEMENT</div>
+
+    <section class="predictions">
+      <h2>Latest Predictions</h2>
+      <div class="match">
+        <strong>Arsenal vs. Manchester City</strong><br>
+        April 22 — Arsenal 35% | Draw 26% | Man City 39%<br>
+        <strong>Resultado estimado: 1 - 2</strong>
+      </div>
+      <div class="match">
+        <strong>Juventus vs. Milan</strong><br>
+        April 22 — Juventus 41% | Draw 27% | Milan 32%<br>
+        <strong>Resultado estimado: 2 - 1</strong>
+      </div>
+    </section>
+
+    <section class="chatgpt">
+      <h2>ChatGPT te recomienda</h2>
+      <p>En la próxima jornada recomiendo ver el partido entre Arsenal y Manchester City. Ambos equipos están en gran forma y promete ser emocionante.</p>
+    </section>
+
+    <section class="results">
+      <h2>Results</h2>
+      <div class="match">Barcelona 1 - 0 Real Madrid</div>
+      <div class="match">Bayern Munich 2 - 0 Dortmund</div>
+    </section>
+
+    <div class="ads">ADVERTISEMENT</div>
+  </div>
+</body>
+</html>
