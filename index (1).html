@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PredicFutbol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Roboto', sans-serif; background: url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d') center/cover no-repeat; color: white; }
+    header { background: rgba(0,51,0,0.9); padding: 1rem 2rem; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+    header h1 { font-size: 2rem; display: flex; align-items: center; }
+    nav { margin-left: auto; position: relative; }
+    nav a, nav button { color: white; text-decoration: none; margin: 0 0.5rem; background: none; border: none; font-size: 1rem; cursor: pointer; }
+    .dropdown { position: absolute; top: 100%; left: 0; background: rgba(0,0,0,0.8); display: none; padding: 0.5rem; max-height: 400px; overflow: auto; }
+    .dropdown div { margin: 0.5rem 0; }
+    .dropdown button { display: block; width: 100%; text-align: left; padding: 0.2rem 0; }
+    nav:hover .dropdown, nav:focus-within .dropdown { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PREDICFUTBOL</h1>
+    <nav>
+      <button>Países ▾</button>
+      <div class="dropdown" id="continent-list"></div>
+    </nav>
+  </header>
+  <div class="container">
+    <section class="intro">
+      <h2>Bienvenido a PredicFutbol</h2>
+      <p>Seleccioná un país desde el menú para ver sus ligas y predicciones.</p>
+    </section>
+  </div>
+
+  <script>
+    const data = {
+      "Europa": {
+        "España": ["LaLiga"],
+        "Inglaterra": ["Premier League"],
+        "Italia": ["Serie A"],
+        "Alemania": ["Bundesliga"],
+        "Francia": ["Ligue 1"]
+      },
+      "América del Sur": {
+        "Argentina": ["Liga Profesional"],
+        "Brasil": ["Brasileirão Serie A"],
+        "Chile": ["Primera División"]
+      },
+      "América del Norte": {
+        "Estados Unidos": ["MLS"],
+        "México": ["Liga MX"]
+      },
+      "Asia": {
+        "Japón": ["J1 League"],
+        "Corea del Sur": ["K League 1"],
+        "China": ["Chinese Super League"]
+      },
+      "África": {
+        "Sudáfrica": ["Premier Soccer League"],
+        "Egipto": ["Egyptian Premier League"]
+      },
+      "Oceanía": {
+        "Australia": ["A-League"]
+      }
+    };
+
+    const continentList = document.getElementById('continent-list');
+    Object.entries(data).forEach(([cont, countries]) => {
+      const contDiv = document.createElement('div');
+      contDiv.innerHTML = `<strong>${cont}</strong>`;
+      Object.entries(countries).forEach(([country, leagues]) => {
+        const btnCountry = document.createElement('button');
+        btnCountry.textContent = country;
+        btnCountry.onclick = () => {
+          alert('Seleccione liga de ' + country);
+        };
+        contDiv.appendChild(btnCountry);
+      });
+      continentList.appendChild(contDiv);
+    });
+  </script>
+</body>
+</html>
